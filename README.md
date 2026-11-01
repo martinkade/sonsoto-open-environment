@@ -16,7 +16,8 @@ Eine Home Assistant Custom Integration zur Anbindung öffentlicher Umwelt- und W
   - **Luft & Atmosphäre:** Lufttemperatur, relative Luftfeuchtigkeit, Luftdruck, Niederschlag, Windgeschwindigkeit, Windrichtung, Bewölkungsgrad, Schneefall, Feinstaub (`PM10` & `PM2.5`).
   - **Wasser & Boden:** Wasserstand/Pegel, Wassertemperatur, Bodentemperatur (in verschiedenen Tiefen), Schneehöhe.
 - **Automatische Geräte-Gruppierung:** Alle Sensoren einer Messstation (z. B. `Ahaus (DWD)` oder `TBL Ahaus Sektor 11 (BFS)`) werden übersichtlich als gemeinsames Home Assistant Gerät angelegt.
-- **Umfangreiche Attribute:** Jeder Sensor liefert neben dem aktuellsten Messwert (`native_value`) auch den Messzeitpunkt (`last_measured_at`), Geokoordinaten (`latitude`, `longitude`), Messintervall, historische Min-/Max-Werte sowie den offiziellen Quellenhinweis (`attribution`).
+- **Messwert & Erfassungszeitpunkt:** Für jeden Sensor wird sowohl die Messwert-Entität als auch eine eigene Timestamp-Entität (`device_class: timestamp`, z. B. `Lufttemperatur Erfassungszeitpunkt`) angelegt. So ist der genaue Erfassungszeitpunkt direkt auf Dashboards und in Automationen auslesbar.
+- **Umfangreiche Attribute:** Jede Entität liefert zudem detaillierte Attribute wie `last_measured_at`, `timestamp`, `erfassungszeitpunkt`, Geokoordinaten (`latitude`, `longitude`), Mess- und Abtastintervall, historische Min-/Max-Werte sowie den offiziellen Quellenhinweis (`attribution`).
 - **Jederzeit anpassbar (Options Flow):** Sensoren im Suchbereich können nachträglich über *Konfigurieren* hinzugefügt oder abgewählt sowie das Abfrageintervall angepasst werden.
 
 ---

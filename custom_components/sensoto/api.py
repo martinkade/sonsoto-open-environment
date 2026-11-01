@@ -268,6 +268,14 @@ class SensotoApiClient:
         phenomenon = data.get("phenomenon") or {}
         data_source = data.get("data_source") or {}
 
+        raw_max_time = (
+            stats.get("max_time")
+            or stats.get("latest_time")
+            or stats.get("max_date_iso")
+            or stats.get("max_date")
+            or data.get("max_time")
+        )
+
         sensor_key = make_sensor_key(network_code, device_code, sensor_code)
         return SensotoSensorReading(
             sensor_key=sensor_key,
@@ -277,7 +285,7 @@ class SensotoApiClient:
             latest_value=_parse_float(stats.get("latest_value")),
             min_value=_parse_float(stats.get("min_value")),
             max_value=_parse_float(stats.get("max_value")),
-            last_measured_at=_parse_iso_datetime(stats.get("max_time")),
+            last_measured_at=_parse_iso_datetime(raw_max_time),
             value_count=_parse_int(stats.get("value_count")),
             days_with_data=_parse_int(stats.get("days_with_data")),
             uom=phenomenon.get("uom"),
