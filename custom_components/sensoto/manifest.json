@@ -1,12 +1,18 @@
 {
   "domain": "sensoto",
   "name": "Sensoto Environment Sensors",
-  "codeowners": ["@martinkade"],
+  "categories": [
+    "weather_alerts",
+    "sensors"
+  ],
+  "codeowners": [
+    "@martinkade"
+  ],
   "config_flow": true,
-  "documentation": "https://github.com/martinkade/EnvironmentSensors",
+  "documentation": "https://github.com/martinkade/sonsoto-open-environment",
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/martinkade/EnvironmentSensors/issues",
+  "issue_tracker": "https://github.com/martinkade/sonsoto-open-environment/issues",
   "requirements": [],
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
