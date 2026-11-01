@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Sensoto Environment Sensors",
+        "description": "Select how to search for Sensoto measurement stations and which sensor categories to include.",
+        "data": {
+          "name": "Integration Name",
+          "search_mode": "Search Mode",
+          "categories": "Sensor Categories",
+          "max_age_days": "Maximum age of latest reading in days (0 = show all)"
+        }
+      },
+      "radius": {
+        "title": "Configure Radius Search",
+        "description": "Specify the center coordinates (defaults to your Home Assistant location) and search radius in kilometers.",
+        "data": {
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "radius_km": "Search radius"
+        }
+      },
+      "bbox": {
+        "title": "Configure Bounding Box",
+        "description": "Define the geographic search rectangle using top-left (north-west) and bottom-right (south-east) coordinates.",
+        "data": {
+          "top_left_lat": "Top-Left Latitude (North)",
+          "top_left_lon": "Top-Left Longitude (West)",
+          "bottom_right_lat": "Bottom-Right Latitude (South)",
+          "bottom_right_lon": "Bottom-Right Longitude (East)"
+        }
+      },
+      "select_sensors": {
+        "title": "Select Sensors",
+        "description": "Found {sensor_count} active sensors in the search area. Select the sensors you want to add to Home Assistant.",
+        "data": {
+          "selected_sensors": "Available Sensors (sorted by distance)",
+          "scan_interval": "Update interval"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the Sensoto API (api.sensoto.io).",
+      "api_error": "The Sensoto API returned an unexpected error.",
+      "invalid_bbox": "Invalid bounding box: Top-Left must be north (higher latitude) and west (lower longitude) of Bottom-Right.",
+      "no_sensors_found": "No active sensors were found in the specified area for the selected categories.",
+      "no_sensors_selected": "Please select at least one sensor."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Configure Sensoto Sensors & Update Interval",
+        "description": "Add or remove sensors in your search area or adjust the polling interval.",
+        "data": {
+          "selected_sensors": "Selected Sensors",
+          "scan_interval": "Update interval"
+        }
+      }
+    },
+    "error": {
+      "no_sensors_selected": "Please select at least one sensor."
+    }
+  }
+}

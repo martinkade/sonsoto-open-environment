@@ -1,0 +1,12 @@
+{
+  "domain": "sensoto",
+  "name": "Sensoto Environment Sensors",
+  "codeowners": ["@martinkade"],
+  "config_flow": true,
+  "documentation": "https://github.com/martinkade/EnvironmentSensors",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/martinkade/EnvironmentSensors/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

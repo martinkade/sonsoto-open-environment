@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sensoto Umweltsensoren einrichten",
+        "description": "Wähle aus, wie nach Sensoto-Messstationen gesucht werden soll und welche Sensor-Kategorien dich interessieren.",
+        "data": {
+          "name": "Name der Integration",
+          "search_mode": "Suchmodus",
+          "categories": "Sensor-Kategorien",
+          "max_age_days": "Maximales Alter des letzten Messwerts (0 = alle anzeigen)"
+        }
+      },
+      "radius": {
+        "title": "Umkreissuche konfigurieren",
+        "description": "Gib den Mittelpunkt (standardmäßig dein Home Assistant Standort) und den Suchradius in Kilometern an.",
+        "data": {
+          "latitude": "Breitengrad (Latitude)",
+          "longitude": "Längengrad (Longitude)",
+          "radius_km": "Suchradius"
+        }
+      },
+      "bbox": {
+        "title": "Bounding Box konfigurieren",
+        "description": "Definiere das Suchrechteck über die obere linke (Nord-West) und untere rechte (Süd-Ost) Koordinate.",
+        "data": {
+          "top_left_lat": "Top-Left Breitengrad (Nord)",
+          "top_left_lon": "Top-Left Längengrad (West)",
+          "bottom_right_lat": "Bottom-Right Breitengrad (Süd)",
+          "bottom_right_lon": "Bottom-Right Längengrad (Ost)"
+        }
+      },
+      "select_sensors": {
+        "title": "Sensoren auswählen",
+        "description": "Es wurden {sensor_count} aktive Sensoren im Suchbereich gefunden. Wähle die Sensoren aus, die in Home Assistant angelegt werden sollen.",
+        "data": {
+          "selected_sensors": "Verfügbare Sensoren (sortiert nach Entfernung)",
+          "scan_interval": "Abfrageintervall"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zur Sensoto API (api.sensoto.io) fehlgeschlagen.",
+      "api_error": "Die Sensoto API hat einen unerwarteten Fehler zurückgegeben.",
+      "invalid_bbox": "Ungültige Bounding Box: Top-Left muss nördlich (größerer Breitengrad) und westlich (kleinerer Längengrad) von Bottom-Right liegen.",
+      "no_sensors_found": "Im angegebenen Suchbereich wurden keine aktiven Sensoren für die gewählten Kategorien gefunden.",
+      "no_sensors_selected": "Bitte wähle mindestens einen Sensor aus."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Sensoto Sensoren & Abfrageintervall anpassen",
+        "description": "Hier kannst du weitere Sensoren im Suchgebiet hinzufügen, abwählen oder das Abfrageintervall anpassen.",
+        "data": {
+          "selected_sensors": "Ausgewählte Sensoren",
+          "scan_interval": "Abfrageintervall"
+        }
+      }
+    },
+    "error": {
+      "no_sensors_selected": "Bitte wähle mindestens einen Sensor aus."
+    }
+  }
+}
